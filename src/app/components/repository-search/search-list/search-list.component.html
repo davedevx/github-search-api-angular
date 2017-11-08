@@ -1,0 +1,22 @@
+<div class="repository-items-list">
+  <ul *ngIf="repositoryList.length > 0">
+    <li *ngFor="let repository of repositoryList" class="list-group">
+      <div class="list-group-item list-group-item-action flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">{{ repository.name }}</h5>
+        </div>
+        <p class="mb-1">{{ repository.description }}</p>
+        <br>
+        <p class="mb-1"><strong>URL:</strong> <a href="{{ repository.html_url }}" target="_blank">{{ repository.html_url }}</a></p>
+        <p class="mb-1"><strong>Forks count:</strong> {{ repository.forks_count }}</p>
+        <p class="mb-1"><strong>Stargazers count:</strong> {{ repository.stargazers_count }}</p>
+        <p class="mb-1"><strong>Watchers count:</strong> {{ repository.watchers_count }}</p>
+        <p class="mb-1">
+          <strong>Open issues:</strong> {{ repository.open_issues_count }}
+          <small *ngIf="repository.open_issues_count > 0">(click <a routerLink="/repository/issues/{{ repository.full_name }}">here</a> to check them out.)</small>
+        </p>
+        <p class="mb-1"><a routerLink="/repository/chart/{{ repository.full_name }}">Check out the chart of this repository</a></p>
+      </div>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,5 @@
+<sub-header [subHeading]="subHeading"></sub-header>
+
+<repository-issue-list [hasFetched]="hasFetched" [repositoryIssueList]="repositoryIssueList"></repository-issue-list>
+
+<p *ngIf="error">{{ error }}. Please go back to the <a routerLink="/">homepage</a> and try again.</p>

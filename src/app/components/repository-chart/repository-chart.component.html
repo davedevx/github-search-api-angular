@@ -1,0 +1,9 @@
+<sub-header [subHeading]="subHeading"></sub-header>
+
+<div class="repository-chart">
+  <div *ngIf="repository">
+    <chart-bar [repository]="repository"></chart-bar>
+  </div>
+</div>
+
+<p *ngIf="error">{{ error }}. Please go back to the <a routerLink="/">homepage</a> and try again.</p>

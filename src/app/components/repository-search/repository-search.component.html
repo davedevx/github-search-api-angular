@@ -1,0 +1,12 @@
+<sub-header [subHeading]="subHeading"></sub-header>
+
+<form (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <input type="search" class="form-control" placeholder="enter repository name here..." [formControl]="searchControl" [value]="searchName">
+  </div>
+  <button type="submit" class="btn btn-primary">Search</button>
+</form>
+
+<repository-search-list [searchSubmitted]="searchSubmitted" [repositoryList]="repositoryList"></repository-search-list>
+
+<p *ngIf="error">{{ error }}. Please go back to the <a routerLink="/">homepage</a> and try again.</p>

@@ -1,0 +1,14 @@
+<div class="repository-items-list">
+  <ul *ngIf="repositoryIssueList.length > 0">
+    <li *ngFor="let repositoryIssue of repositoryIssueList" class="list-group">
+      <div class="list-group-item list-group-item-action flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">{{ repositoryIssue.title }}</h5>
+        </div>
+        <br>
+        <p class="mb-1"><strong>URL:</strong> <a href="{{ repositoryIssue.html_url }}" target="_blank">{{ repositoryIssue.html_url }}</a></p>
+        <p class="mb-1"><strong>State:</strong> {{ repositoryIssue.state }}</p>
+      </div>
+    </li>
+  </ul>
+</div>
